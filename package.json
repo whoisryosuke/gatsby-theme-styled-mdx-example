@@ -1,0 +1,41 @@
+{
+  "name": "gatsby-theme-styled-mdx-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ryosuke <ryosuke.san.hana@gmail.com> (@whoisryosuke)",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "rm -rf .cache && npm run develop",
+    "develop": "nodemon --exec \"gatsby develop\"",
+    "debug": "nodemon --exec \"node --inspect-brk --no-lazy node_modules/.bin/gatsby develop\"",
+    "format": "prettier --write 'src/**/*.js'",
+    "lint": "eslint . --ext ts --ext tsx",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      ".cache/*",
+      "public/*",
+      "schema.json",
+      "src/*",
+      "content/*",
+      "static/*"
+    ],
+    "delay": "1500"
+  },
+  "dependencies": {
+    "gatsby": "^2.18.4",
+    "gatsby-theme-styled-mdx": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
